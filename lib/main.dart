@@ -57,7 +57,7 @@ class CalmSciousApp extends StatelessWidget {
           ),
           scaffoldBackgroundColor: AppColors.backgroundSplash,
         ),
-        initialRoute: AppRoutes.splash,
+        initialRoute: AppRoutes.home,
         onGenerateRoute: AppRouter.onGenerateRoute,
       ),
     );

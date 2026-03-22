@@ -11,6 +11,16 @@ import 'package:calmscious/features/notifications/view/notifications_screen.dart
 import 'package:calmscious/features/courses/view/all_courses_screen.dart';
 import 'package:calmscious/features/courses/view/course_detail_screen.dart';
 import 'package:calmscious/features/books/view/add_books_screen.dart';
+import 'package:calmscious/features/live_sessions/view/live_sessions_screen.dart';
+import 'package:calmscious/features/live_sessions/view/live_session_detail_screen.dart';
+import 'package:calmscious/features/payment/view/payment_screen.dart';
+import 'package:calmscious/features/chat/view/chat_screen.dart';
+import 'package:calmscious/features/profile/view/profile_screen.dart';
+import 'package:calmscious/features/profile/view/create_profile_screen.dart';
+import 'package:calmscious/features/sessions/view/coach_session_details_screen.dart';
+import 'package:calmscious/features/booking/view/select_date_time_screen.dart';
+import 'package:calmscious/features/courses/view/add_masterclass_screen.dart';
+import 'package:calmscious/features/services/view/select_service_screen.dart';
 import 'package:flutter/material.dart';
 
 /// Central router — maps named routes to screens.
@@ -44,6 +54,26 @@ class AppRouter {
         return _fade(const CourseDetailScreen());
       case AppRoutes.addBooks:
         return _fade(const AddBooksScreen());
+      case AppRoutes.liveSessions:
+        return _fade(const LiveSessionsScreen());
+      case AppRoutes.liveSessionDetail:
+        return _fade(const LiveSessionDetailScreen());
+      case AppRoutes.payment:
+        return _fade(const PaymentScreen());
+      case AppRoutes.chat:
+        return _fade(const ChatScreen());
+      case AppRoutes.profile:
+        return _fade(const ProfileScreen());
+      case AppRoutes.createProfile:
+        return _fade(const CreateProfileScreen());
+      case AppRoutes.coachSessionDetails:
+        return _fade(const CoachSessionDetailsScreen());
+      case AppRoutes.selectDateTime:
+        return _fade(const SelectDateTimeScreen());
+      case AppRoutes.addMasterclass:
+        return _fade(const AddMasterclassScreen());
+      case AppRoutes.selectService:
+        return _fade(const SelectServiceScreen());
       default:
         return _fade(_NotFoundScreen(route: settings.name ?? ''));
     }

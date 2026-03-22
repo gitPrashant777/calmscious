@@ -42,11 +42,14 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      const CircleAvatar(
+                    GestureDetector(
+                      onTap: () => Navigator.pushNamed(context, AppRoutes.profile),
+                      child: const CircleAvatar(
                         radius: 26,
                         backgroundColor: AppColors.primaryLight,
                         backgroundImage: NetworkImage('https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80'), // user mock
                       ),
+                    ),
                       const SizedBox(width: 12),
                       const Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -57,13 +60,26 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  IconButton(
-                    icon: const Icon(Icons.notifications_none, color: AppColors.textPrimary),
-                    style: IconButton.styleFrom(
-                      backgroundColor: AppColors.white,
-                      padding: const EdgeInsets.all(12),
-                    ),
-                    onPressed: () => Navigator.pushNamed(context, AppRoutes.notifications),
+                  Row(
+                    children: [
+                      IconButton(
+                        icon: const Icon(Icons.chat_bubble_outline, color: AppColors.textPrimary),
+                        style: IconButton.styleFrom(
+                          backgroundColor: AppColors.white,
+                          padding: const EdgeInsets.all(12),
+                        ),
+                        onPressed: () => Navigator.pushNamed(context, AppRoutes.chat),
+                      ),
+                      const SizedBox(width: 8),
+                      IconButton(
+                        icon: const Icon(Icons.notifications_none, color: AppColors.textPrimary),
+                        style: IconButton.styleFrom(
+                          backgroundColor: AppColors.white,
+                          padding: const EdgeInsets.all(12),
+                        ),
+                        onPressed: () => Navigator.pushNamed(context, AppRoutes.notifications),
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -173,7 +189,16 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(height: 32),
               
               // Live sessions
-              const Text('Live sessions', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: AppColors.textPrimary)),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text('Live sessions', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: AppColors.textPrimary)),
+                  GestureDetector(
+                    onTap: () => Navigator.pushNamed(context, AppRoutes.liveSessions),
+                    child: const Text('See All', style: TextStyle(fontSize: 13, color: AppColors.textSecondary)),
+                  ),
+                ],
+              ),
               const SizedBox(height: 16),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
@@ -184,7 +209,7 @@ class HomeScreen extends StatelessWidget {
                       subtitle: 'A gentle introduction to stillness',
                       imageUrl: 'https://images.unsplash.com/photo-1599901860904-17e08c2d4dc9?auto=format&fit=crop&w=400&q=80',
                       isLive: true,
-                      onTap: () => Navigator.pushNamed(context, AppRoutes.courseDetail),
+                      onTap: () => Navigator.pushNamed(context, AppRoutes.liveSessionDetail),
                       width: 220,
                     ),
                     const SizedBox(width: 16),
@@ -192,7 +217,8 @@ class HomeScreen extends StatelessWidget {
                       title: 'One Breath at a Time',
                       subtitle: 'Finding focus through breath',
                       imageUrl: 'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=400&q=80',
-                      onTap: () => Navigator.pushNamed(context, AppRoutes.courseDetail),
+                      isLive: true,
+                      onTap: () => Navigator.pushNamed(context, AppRoutes.liveSessionDetail),
                       width: 220,
                     ),
                   ],
