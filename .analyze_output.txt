@@ -1,0 +1,10 @@
+Analyzing Calmscious...                                         
+
+  error - Invalid constant value - lib\features\onboarding\model\onboarding_model.dart:20:18 - invalid_constant
+  error - The values in a const list literal must be constants - lib\features\onboarding\model\onboarding_model.dart:20:18 - non_constant_list_element
+  error - Invalid constant value - lib\features\onboarding\model\onboarding_model.dart:25:18 - invalid_constant
+  error - The values in a const list literal must be constants - lib\features\onboarding\model\onboarding_model.dart:25:18 - non_constant_list_element
+  error - Invalid constant value - lib\features\onboarding\model\onboarding_model.dart:30:18 - invalid_constant
+  error - The values in a const list literal must be constants - lib\features\onboarding\model\onboarding_model.dart:30:18 - non_constant_list_element
+  error - The name 'MyApp' isn't a class - test\widget_test.dart:16:35 - creation_with_non_type
+
