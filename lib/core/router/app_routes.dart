@@ -12,4 +12,10 @@ class AppRoutes {
   static const String otp = '/otp';
   static const String profileSetup = '/profile_setup';
   static const String goals = '/goals';
+
+  // Main flow
+  static const String notifications = '/notifications';
+  static const String allCourses = '/all_courses';
+  static const String courseDetail = '/course_detail';
+  static const String addBooks = '/add_books';
 }

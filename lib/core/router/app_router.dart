@@ -7,6 +7,10 @@ import 'package:calmscious/features/auth/view/mobile_number_screen.dart';
 import 'package:calmscious/features/auth/view/otp_screen.dart';
 import 'package:calmscious/features/auth/view/profile_setup_screen.dart';
 import 'package:calmscious/features/auth/view/goals_screen.dart';
+import 'package:calmscious/features/notifications/view/notifications_screen.dart';
+import 'package:calmscious/features/courses/view/all_courses_screen.dart';
+import 'package:calmscious/features/courses/view/course_detail_screen.dart';
+import 'package:calmscious/features/books/view/add_books_screen.dart';
 import 'package:flutter/material.dart';
 
 /// Central router — maps named routes to screens.
@@ -32,6 +36,14 @@ class AppRouter {
         return _fade(const GoalsScreen());
       case AppRoutes.home:
         return _fade(const HomeScreen());
+      case AppRoutes.notifications:
+        return _fade(const NotificationsScreen());
+      case AppRoutes.allCourses:
+        return _fade(const AllCoursesScreen());
+      case AppRoutes.courseDetail:
+        return _fade(const CourseDetailScreen());
+      case AppRoutes.addBooks:
+        return _fade(const AddBooksScreen());
       default:
         return _fade(_NotFoundScreen(route: settings.name ?? ''));
     }

@@ -26,10 +26,19 @@ class AppColors {
   // ── Button ─────────────────────────────────────────────────────────────────
   static const Color buttonBackground = Color(0xFF2EC4C4);
   static const Color buttonText = Color(0xFFFFFFFF);
+  static const Color buttonOrange = Color(0xFFE48B69);
+
+  // ── Chips & Banners ───────────────────────────────────────────────────────
+  static const Color bannerOrange = Color(0xFFF19E7A);
+  static const Color chipBackground = Color(0xFFE0F7F7); // Cyan light
+  static const Color chipOrange = Color(0xFFE48B69); // Intermediate chip
 
   // ── Misc ───────────────────────────────────────────────────────────────────
   static const Color transparent = Colors.transparent;
   static const Color white = Color(0xFFFFFFFF);
   static const Color black = Color(0xFF000000);
   static const Color divider = Color(0xFFCDE9E9);
+  static const Color cardShadow = Color(0x1A000000); // 10% black
+  static const Color starRating = Color(0xFFFFD700);
+  static const Color greyBackground = Color(0xFFF5F5F5); // Books grid generic
 }
