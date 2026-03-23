@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:calmscious/core/router/app_routes.dart';
 import 'package:calmscious/core/constants/app_colors.dart';
 import 'package:calmscious/core/widgets/course_card.dart';
+import 'package:calmscious/features/services/view/select_service_screen.dart';
+import 'package:calmscious/features/shop/view/gifting_curations_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -14,20 +16,9 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: AppColors.transparent,
         elevation: 0,
         centerTitle: true,
-        title: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const Icon(Icons.spa, color: AppColors.primary, size: 28), // mock logo
-            const SizedBox(width: 8),
-            const Text(
-              'Calmscious',
-              style: TextStyle(
-                color: AppColors.textPrimary,
-                fontSize: 22,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ],
+        title: Image.asset(
+          'assets/images/splashlogo.png',
+          height: 40,
         ),
       ),
       body: SingleChildScrollView(
@@ -105,47 +96,53 @@ class HomeScreen extends StatelessWidget {
               ),
               const SizedBox(height: 32),
 
-              // 1 on 1 Banner
-              Container(
-                width: double.infinity,
-                padding: const EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                  gradient: const LinearGradient(
-                    colors: [Color(0xFFF8C2AE), Color(0xFFE29578)], // Matching the Figma layout exact RGBA
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (_) => const SelectServiceScreen()),
+                  );
+                },
+                child: Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                      colors: [Color(0xFFF8C2AE), Color(0xFFE29578)], // Matching the Figma layout exact RGBA
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                    borderRadius: BorderRadius.circular(16),
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Color(0x40000000), // rgba 0 0 0 0.25 equivalent -> roughly 40 hex alpha
+                        blurRadius: 9,
+                        offset: Offset(0, 0),
+                        spreadRadius: 1,
+                      )
+                    ]
                   ),
-                  borderRadius: BorderRadius.circular(16),
-                  boxShadow: const [
-                    BoxShadow(
-                      color: Color(0x40000000), // rgba 0 0 0 0.25 equivalent -> roughly 40 hex alpha
-                      blurRadius: 9,
-                      offset: Offset(0, 0),
-                      spreadRadius: 1,
-                    )
-                  ]
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      '1 on 1 Sessions',
-                      style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700, color: AppColors.white),
-                    ),
-                    const SizedBox(height: 8),
-                    const Text(
-                      'Lets open up to the things that\nmatter the most',
-                      style: TextStyle(fontSize: 14, color: AppColors.white, height: 1.4),
-                    ),
-                    const SizedBox(height: 16),
-                    Row(
-                      children: const [
-                        Text('Book Now', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: AppColors.white)),
-                        SizedBox(width: 6),
-                        Icon(Icons.calendar_today, color: AppColors.white, size: 16),
-                      ],
-                    )
-                  ],
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        '1 on 1 Sessions',
+                        style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700, color: AppColors.white),
+                      ),
+                      const SizedBox(height: 8),
+                      const Text(
+                        'Lets open up to the things that\nmatter the most',
+                        style: TextStyle(fontSize: 14, color: AppColors.white, height: 1.4),
+                      ),
+                      const SizedBox(height: 16),
+                      Row(
+                        children: const [
+                          Text('Book Now', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: AppColors.white)),
+                          SizedBox(width: 6),
+                          Icon(Icons.calendar_today, color: AppColors.white, size: 16),
+                        ],
+                      )
+                    ],
+                  ),
                 ),
               ),
               const SizedBox(height: 32),
@@ -156,7 +153,7 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   const Text('Popular on Calmicious', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: AppColors.textPrimary)),
                   GestureDetector(
-                    onTap: () => Navigator.pushNamed(context, AppRoutes.allCourses),
+                    onTap: () => Navigator.pushNamed(context, AppRoutes.giftingCurations),
                     child: const Text('See All', style: TextStyle(fontSize: 13, color: AppColors.textSecondary)),
                   ),
                 ],

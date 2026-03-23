@@ -32,4 +32,19 @@ class AppRoutes {
   static const String selectDateTime = '/select_date_time';
   static const String addMasterclass = '/add_masterclass';
   static const String selectService = '/select_service';
+  
+  // Shopping and Admin
+  static const String adminDashboard = '/admin_dashboard';
+  static const String coachManagement = '/coach_management';
+  static const String rescheduleSession = '/reschedule_session';
+  static const String selectCoach = '/select_coach';
+  static const String serviceCoachDetails = '/service_coach_details';
+  static const String cart = '/cart';
+  static const String giftingCurations = '/gifting_curations';
+  static const String productDetails = '/product_details';
+  static const String checkout = '/checkout';
+  static const String sessionTranscription = '/session_transcription';
+  static const String giftReturnRequest = '/gift_return_request';
+  static const String reviewGift = '/review_gift';
+  static const String giftReviews = '/gift_reviews';
 }

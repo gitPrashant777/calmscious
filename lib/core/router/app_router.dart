@@ -21,6 +21,19 @@ import 'package:calmscious/features/sessions/view/coach_session_details_screen.d
 import 'package:calmscious/features/booking/view/select_date_time_screen.dart';
 import 'package:calmscious/features/courses/view/add_masterclass_screen.dart';
 import 'package:calmscious/features/services/view/select_service_screen.dart';
+import 'package:calmscious/features/home/view/admin_dashboard_screen.dart';
+import 'package:calmscious/features/home/view/coach_management_screen.dart';
+import 'package:calmscious/features/sessions/view/reschedule_session_screen.dart';
+import 'package:calmscious/features/coaches/view/select_coach_screen.dart';
+import 'package:calmscious/features/sessions/view/service_coach_details_screen.dart';
+import 'package:calmscious/features/shop/view/cart_screen.dart';
+import 'package:calmscious/features/shop/view/gifting_curations_screen.dart';
+import 'package:calmscious/features/shop/view/product_details_screen.dart';
+import 'package:calmscious/features/shop/view/checkout_screen.dart';
+import 'package:calmscious/features/sessions/view/session_transcription_screen.dart';
+import 'package:calmscious/features/shop/view/gift_return_request_screen.dart';
+import 'package:calmscious/features/shop/view/review_gift_screen.dart';
+import 'package:calmscious/features/shop/view/gift_reviews_screen.dart';
 import 'package:flutter/material.dart';
 
 /// Central router — maps named routes to screens.
@@ -74,6 +87,32 @@ class AppRouter {
         return _fade(const AddMasterclassScreen());
       case AppRoutes.selectService:
         return _fade(const SelectServiceScreen());
+      case AppRoutes.adminDashboard:
+        return _fade(const AdminDashboardScreen());
+      case AppRoutes.coachManagement:
+        return _fade(const CoachManagementScreen());
+      case AppRoutes.rescheduleSession:
+        return _fade(const RescheduleSessionScreen());
+      case AppRoutes.selectCoach:
+        return _fade(const SelectCoachScreen());
+      case AppRoutes.serviceCoachDetails:
+        return _fade(const ServiceCoachDetailsScreen());
+      case AppRoutes.cart:
+        return _fade(const CartScreen());
+      case AppRoutes.giftingCurations:
+        return _fade(const GiftingCurationsScreen());
+      case AppRoutes.productDetails:
+        return _fade(const ProductDetailsScreen());
+      case AppRoutes.checkout:
+        return _fade(const CheckoutScreen());
+      case AppRoutes.sessionTranscription:
+        return _fade(const SessionTranscriptionScreen());
+      case AppRoutes.giftReturnRequest:
+        return _fade(const GiftReturnRequestScreen());
+      case AppRoutes.reviewGift:
+        return _fade(const ReviewGiftScreen());
+      case AppRoutes.giftReviews:
+        return _fade(const GiftReviewsScreen());
       default:
         return _fade(_NotFoundScreen(route: settings.name ?? ''));
     }
